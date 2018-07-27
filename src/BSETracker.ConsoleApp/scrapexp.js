@@ -30,10 +30,3 @@ $('.TTHeadergrey:first-child')
 elements.forEach(function (v) {
     console.log(v)
 })
-
-
-
-// .announceheader Date (single)
-// .TTHeadergrey (multiple)
-
-
