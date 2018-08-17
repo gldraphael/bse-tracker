@@ -7,5 +7,7 @@ namespace BSETracker.Web.Models
         public string PDF { get; set; }
 
         override public string ToString() => Newtonsoft.Json.JsonConvert.SerializeObject(this);
+
+        override public int GetHashCode() => (Title + Body + PDF).GetHashCode();
     }
 }
