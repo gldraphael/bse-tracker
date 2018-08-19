@@ -6,7 +6,7 @@ namespace BSETracker.Web.Controllers
 {
     public class TempController : Controller
     {
-        [HttpGet("/")]
+        [HttpGet("/api")]
         public async Task<IActionResult> Index([FromServices]BseClient bse) 
             => Ok(await bse.GetAnnouncements());
     }
