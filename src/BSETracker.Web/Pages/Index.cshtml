@@ -9,14 +9,23 @@
 		<link rel="stylesheet" href="/style.css">
 	</head>
 	<body>
-        <div id="wrapper">
-            @if(Model.Success == true)
-            {
-                @: Success
-            }
-            <form method="POST">
-                <input asp-for="VM.Email" />
-                <input type="submit" />
+        <div class="container">  
+            <form id="contact" method="POST">
+                <h3>BSE Tracker</h3>
+                @if(Model.Success == true)
+                {
+                    @: Registration success ✌️
+                }
+                else if(Model.Success == false)
+                {
+                    @: Registration failed 🤷🏽‍♀️
+                }
+                <fieldset>
+                    <input asp-for="VM.Email" placeholder="jane.doe@example.com" autofocus />
+                </fieldset>
+                <fieldset>
+                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                </fieldset>
             </form>
         </div>
 	</body>

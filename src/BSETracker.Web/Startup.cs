@@ -27,6 +27,7 @@ namespace BSETracker.Web
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
             app.UseMvc();
         }
     }
