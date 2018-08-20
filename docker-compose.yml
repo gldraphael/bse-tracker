@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  bsetracker.web:
+    image: repo.treescale.com/bsetracker/bsetracker
+    build:
+      context: .
+      dockerfile: src/BSETracker.Web/Dockerfile
