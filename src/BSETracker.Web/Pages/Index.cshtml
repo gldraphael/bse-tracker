@@ -10,7 +10,14 @@
     }
     else if(Model.Success == false)
     {
-        @: Registration failed 🤷🏽‍♀️
+        if(Model.Error == null) 
+        {
+            @: Registration failed 🤷🏽‍    
+        }
+        else 
+        {
+            @: @Model.Error
+        }
     }
 
     @if(Model.Success != true)
