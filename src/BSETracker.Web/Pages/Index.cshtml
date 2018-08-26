@@ -12,10 +12,15 @@
     {
         @: Registration failed 🤷🏽‍♀️
     }
-    <fieldset>
+
+    @if(Model.Success != true)
+    {
+        <fieldset>
         <input asp-for="VM.Email" placeholder="jane.doe@example.com" autofocus />
-    </fieldset>
-    <fieldset>
-        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-    </fieldset>
+        </fieldset>
+        <fieldset>
+            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+        </fieldset>
+    }
+    
 </form>
