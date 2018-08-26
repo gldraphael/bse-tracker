@@ -12,5 +12,14 @@ namespace BSETracker.Web
         {
             Database.Migrate();
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Registration>()
+                .HasIndex(x => x.Email)
+                .IsUnique();
+        }
     }
 }
