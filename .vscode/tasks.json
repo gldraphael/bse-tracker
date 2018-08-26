@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/src/BSETracker.Web/BSETracker.Web.csproj"
+                "${workspaceFolder}/src/services/BSETracker.Web/BSETracker.Web.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
