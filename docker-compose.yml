@@ -9,10 +9,11 @@ services:
       dockerfile: src/BSETracker.Web/Dockerfile
     depends_on: 
       - postgres
+      - redis
 
   bsetracker.cron:
     image: repo.treescale.com/bsetracker/cron
-    container_name: cron
+    container_name: timer
     build:
       context: ./cron
       dockerfile: Dockerfile
@@ -22,3 +23,7 @@ services:
   postgres:
     container_name: db
     image: postgres:10-alpine
+
+  redis:
+    container_name: cache
+    image: redis:4-alpine3.8
