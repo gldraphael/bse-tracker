@@ -1,32 +1,21 @@
 @page
 @model IndexModel
 
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<meta charset = "utf-8">
-		<title>BSE Tracker</title>
-		<link rel="stylesheet" href="/style.css">
-	</head>
-	<body>
-        <div class="container">  
-            <form id="contact" method="POST">
-                <h3>BSE Tracker</h3>
-                @if(Model.Success == true)
-                {
-                    @: Registration success ✌️
-                }
-                else if(Model.Success == false)
-                {
-                    @: Registration failed 🤷🏽‍♀️
-                }
-                <fieldset>
-                    <input asp-for="VM.Email" placeholder="jane.doe@example.com" autofocus />
-                </fieldset>
-                <fieldset>
-                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-                </fieldset>
-            </form>
-        </div>
-	</body>
-</html>
+
+<form id="contact" method="POST">
+    <h3>BSE Tracker</h3>
+    @if(Model.Success == true)
+    {
+        @: Registration success ✌️
+    }
+    else if(Model.Success == false)
+    {
+        @: Registration failed 🤷🏽‍♀️
+    }
+    <fieldset>
+        <input asp-for="VM.Email" placeholder="jane.doe@example.com" autofocus />
+    </fieldset>
+    <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+</form>
