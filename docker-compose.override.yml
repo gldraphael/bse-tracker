@@ -4,5 +4,11 @@ services:
   bsetracker.web:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__Database=Server=postgres;Port=5432;Database=bset;User ID=superman;Password=7mb9eKdtpTTTeUtXrftHF9mB;
     ports:
-      - "80"
+      - "8000:80"
+
+  postgres:
+    environment:
+      - POSTGRES_PASSWORD=7mb9eKdtpTTTeUtXrftHF9mB
+      - POSTGRES_USER=superman

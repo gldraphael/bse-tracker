@@ -6,3 +6,8 @@ services:
     build:
       context: .
       dockerfile: src/BSETracker.Web/Dockerfile
+    depends_on: 
+      - postgres
+
+  postgres:
+    image: postgres:10-alpine
