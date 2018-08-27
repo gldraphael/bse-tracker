@@ -4,17 +4,14 @@ EXPOSE 80
 
 FROM microsoft/dotnet:2.1.400-sdk-alpine AS build
 WORKDIR /src
-COPY docker-compose.dcproj .
-COPY global.json .
 COPY bse-tracker.sln .
-COPY src/BSETracker.Web/BSETracker.Web.csproj src/BSETracker.Web/
-RUN dotnet restore -nowarn:msb3202,nu1503 bse-tracker.sln
+COPY BSETracker.Web.csproj .
+RUN dotnet restore -v quiet bse-tracker.sln
 COPY . .
-WORKDIR /src/src/BSETracker.Web
-RUN dotnet build -c Release -o /app
+RUN dotnet build -c Release -o /app BSETracker.Web.csproj
 
 FROM build AS publish
-RUN dotnet publish -c Release -o /app
+RUN dotnet publish -c Release -o /app -v quiet BSETracker.Web.csproj
 
 FROM base AS final
 WORKDIR /app

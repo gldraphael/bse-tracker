@@ -37,6 +37,12 @@ namespace BSETracker.Web
                 app.UseDeveloperExceptionPage();
             }
 
+            // app.UseForwardedHeaders(new ForwardedHeadersOptions
+            // {
+            //     ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            // });
+            // app.UseAuthentication();
+
             app.UseStaticFiles();
             app.UseMvc();
         }

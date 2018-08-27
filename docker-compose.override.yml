@@ -12,3 +12,7 @@ services:
     environment:
       - POSTGRES_PASSWORD=7mb9eKdtpTTTeUtXrftHF9mB
       - POSTGRES_USER=superman
+
+  nginx:
+    ports:
+      - "80:80"

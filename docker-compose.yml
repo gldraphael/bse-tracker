@@ -5,8 +5,8 @@ services:
     image: repo.treescale.com/bsetracker/bsetracker
     container_name: web
     build:
-      context: .
-      dockerfile: src/BSETracker.Web/Dockerfile
+      context: ./src/services/BSETracker.Web
+      dockerfile: Dockerfile
     depends_on: 
       - postgres
       - redis
@@ -15,7 +15,7 @@ services:
     image: repo.treescale.com/bsetracker/cron
     container_name: timer
     build:
-      context: ./cron
+      context: ./src/services/cron
       dockerfile: Dockerfile
     depends_on:
       - bsetracker.web
@@ -27,3 +27,12 @@ services:
   redis:
     container_name: cache
     image: redis:4-alpine3.8
+
+  nginx:
+    container_name: server
+    image: repo.treescale.com/bsetracker/server
+    build:
+      context: ./src/services/nginx
+      dockerfile: Dockerfile
+    depends_on: 
+      - bsetracker.web
