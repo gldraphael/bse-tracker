@@ -29,8 +29,8 @@ services:
     image: redis:4-alpine3.8
 
   nginx:
-    container_name: server
-    image: repo.treescale.com/bsetracker/server
+    container_name: nginx
+    image: repo.treescale.com/bsetracker/nginx
     build:
       context: ./src/services/nginx
       dockerfile: Dockerfile
